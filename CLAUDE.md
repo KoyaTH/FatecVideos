@@ -10,7 +10,7 @@ Posts, carrosséis, vídeos e animações em Motion Canvas para a Fatec Taquarit
 - Música: evitar faixas com Content ID; o padrão é a trilha original de `tools/musica.py`.
 - **Logo oficial:** `src/images/logo-fatec-taquaritinga.png` (376×120, fundo transparente). Nunca recolorir nem redesenhar; em fundo escuro ou foto, usar sobre uma plaquinha branca (como no gerador, `logo()` em `src/gen/estilos.tsx`).
 - Escrever "Taquaritinga" (com Q). Link do vestibular: vestibular.fatec.sp.gov.br.
-- **Antes de montar posts ou kits, conferir o calendário oficial** (vestibular.fatec.sp.gov.br/calendario). Não publicar "Inscrições abertas" fora do período: a chamada final vem de `CTA` em `src/theme.tsx` (`PROXIMO_VESTIBULAR` ou `INSCRICOES_ABERTAS`).
+- **Antes de montar posts ou kits, conferir o calendário oficial** (vestibular.fatec.sp.gov.br/calendario). Não publicar "Inscrições abertas" fora do período: no gerador, a chamada final vai em `chamada`, `texto` ou `rodape` do pedido (padrão do rodapé: o site do vestibular).
 ## Postagem e agendamento (Metricool)
 
 Conta do Metricool (deixe vazio no repositório; cada pessoa usa a sua, e o Claude descobre os valores com `getBrandSettings`):

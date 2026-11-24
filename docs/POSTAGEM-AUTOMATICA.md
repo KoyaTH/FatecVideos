@@ -177,6 +177,6 @@ Register-ScheduledTask -TaskName "Fatec - postar <nome>" -Action $acao -Trigger 
 
 - **Gente na imagem**: todo post precisa ter pelo menos uma pessoa em destaque.
 - **Modelo de banco de imagem não é aluno**: nunca chame a pessoa da foto de "nossa aluna".
-- **Datas e chamada**: confira o calendário oficial e o `CTA` em `src/theme.tsx`.
+- **Datas e chamada**: confira o calendário oficial e o texto do pedido (`chamada`, `texto`, `rodape`).
 - **Link do vestibular**: vestibular.fatec.sp.gov.br.
 - **Música**: no Reels, use a trilha original do projeto e evite faixas com Content ID.

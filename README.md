@@ -130,7 +130,7 @@ src/
   gerador-posts.ts     projeto: posts gerados (PNG)
   gerador-reels.ts     projeto: Reels gerado (MP4 com áudio)
   post-dezembro.ts     projeto: post fixo da prova de 13/12
-  theme.tsx            cores, fontes e chamada final (CTA)
+  theme.tsx, poster.tsx, exame.tsx, matricula.tsx   módulos antigos, sem uso (ver CLAUDE.md)
 tools/
   gerar.py             escolhe o visual e prepara as filas e o áudio
   kit.py               monta o kit (arquivos, legendas, agenda.ics)

@@ -60,24 +60,19 @@ Licença de Conteúdo do Pixabay: uso comercial liberado, sem crédito.
 
 Buscar em inglês costuma trazer mais resultados.
 
-## Fotos já usadas no projeto
+## Fotos no projeto
 
 | Arquivo em `src/images/` | Banco | Onde aparece |
 |---|---|---|
-| `pixabay-students-1807505.jpg` | Pixabay | Post e vídeo de Sistemas para Internet |
-| `unsplash-N_nAAwnBDy8-tecnico-estoque.jpg` | Unsplash (gratuita) | Post de Gestão da Produção, capa do carrossel, abertura do vídeo de 20 s |
-| `unsplash-5jugXEl5YHM-operadora-fabrica.jpg` | Unsplash (gratuita) | Último slide do carrossel e fecho do vídeo de 20 s |
-| `unsplash-RHqKnRACsqs-alunos-sala.jpg` | Unsplash (gratuita) | Posts da prova (Dia da Prova e Checklist) |
-| `pexels-6683579-sala-prova.jpg` | Pexels | Post "Prova em 13 de dezembro" (`post-dezembro`) |
+| `pexels-6683579-sala-prova.jpg` | [Pexels #6683579](https://www.pexels.com/photo/6683579/) | gerador (chave `sala` em `src/gen/fotos.ts`) e post fixo `post-dezembro` |
+
+Quando adicionar uma foto, inclua uma linha nesta tabela.
 
 ## Como usar no projeto
 
-1. Baixe a foto e salve em `src/images/` com o banco e o ID no nome. Exemplo: `pexels-3184465.jpg`, `unsplash-abc123.jpg`.
-2. Em `src/theme.tsx`, importe a foto e exporte uma constante (como `FOTO_TECNICO`). No post único, preencha o campo `photo` do curso em `src/poster.tsx`:
-   ```ts
-   photo: {src: FOTO_TECNICO, x: 120, y: -300, width: 1340},
-   ```
-3. Ajuste `x`, `y` e `width` até as pessoas ficarem entre o logo e o título, sem deixar faixa vazia nas laterais.
-4. Anote a origem num comentário ao lado (`// Pexels #3184465, licença Pexels`) e adicione a foto à tabela acima.
+1. Baixe a foto e salve em `src/images/` com o banco e o ID no nome. Exemplo: `pexels-3184465-laboratorio.jpg`, `unsplash-abc123-turma.jpg`.
+2. Cadastre a foto em `src/gen/fotos.ts`, com largura, altura, **ponto de foco** (onde está o rosto, de 0 a 1), **temas** e **crédito**. O passo a passo com exemplo de código está no [guia, seção 6](GUIA-POSTS-E-VIDEOS.md#6-adicionar-uma-foto).
+3. O gerador passa a usar a foto sozinho, sempre que os `temas` do pedido combinarem. O enquadramento é automático pelo ponto de foco.
+4. Adicione a foto à tabela acima.
 
 O Claude não contorna bloqueio contra robôs nos sites. Quando o download automático não funcionar, baixe pelo navegador e salve o arquivo em `src/images/`.
