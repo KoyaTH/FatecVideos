@@ -8,10 +8,11 @@ Metricool takes media by link. Default mode is Google Drive (no GitHub needed):
      with unique names (<nome>-01.png, <nome>-02-1.png, ...);
   2. writes kits/<nome>.metricool.json with, for each post: date/time (America/Sao_Paulo),
      networks, Instagram/Facebook type, caption and the file names on Drive.
-Then Claude finds each file with the Google Drive connector, puts its Drive link in
-"media" and schedules with the Metricool connector -- always after reviewing image,
-caption, networks and time with the user. Metricool imports Drive files itself once
-Google Drive is linked in the Metricool account (the file does not need to be public).
+Then share Drive folder FatecVideos/<nome> as "Anyone with the link" (Metricool can
+only fetch Drive files shared that way), and Claude finds each file with the Google
+Drive connector, puts its Drive link in "media" and schedules with the Metricool
+connector -- always after reviewing image, caption, networks and time with the user.
+Full guide: docs/METRICOOL.md.
 
 Where the Drive folder is:
   --pasta=DIR, or the METRICOOL_PASTA environment variable, or the Google Drive for
@@ -146,11 +147,14 @@ def main() -> None:
     print(f"{len(entradas)} post(s) em kits/{nome}.metricool.json")
     if modo == "drive":
         print(f"Mídias copiadas para o Google Drive: {destino}")
-        print("Espere o Drive sincronizar e peça ao Claude para agendar (ele busca os links no Drive).")
+        print("1) Espere o Drive sincronizar.")
+        print(f"2) No Drive, compartilhe a pasta FatecVideos/{nome} como 'Qualquer pessoa com o link'.")
+        print("3) Peça ao Claude: agenda o kit no Metricool.")
     elif modo == "drive-manual":
         print(f"Google Drive para computador não encontrado. Mídias em: {destino}")
         print("Envie essa pasta para o seu Google Drive (drive.google.com > Novo > Upload de pasta)")
         print("ou instale o Google Drive para computador e rode de novo.")
+        print("Depois compartilhe a pasta como 'Qualquer pessoa com o link' (o Metricool exige).")
     else:
         git("add", os.path.relpath(destino, ROOT), os.path.relpath(saida, ROOT))
         if git("status", "--porcelain", "--", os.path.relpath(destino, ROOT), os.path.relpath(saida, ROOT)):

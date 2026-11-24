@@ -24,6 +24,8 @@ Abra `http://localhost:9000/`, escolha o projeto e clique em **RENDER**. Os arqu
 
 - [docs/GUIA-POSTS-E-VIDEOS.md](docs/GUIA-POSTS-E-VIDEOS.md): passo a passo completo (editar textos, trocar fotos, criar curso novo, narração, música, exportar).
 - [docs/BANCOS-DE-IMAGEM.md](docs/BANCOS-DE-IMAGEM.md): bancos de imagem com uso comercial liberado e a regra de sempre ter uma pessoa.
+- [docs/METRICOOL.md](docs/METRICOOL.md): postar e agendar no Instagram/Facebook pelo Metricool, com as mídias no Google Drive (cada pessoa conecta a própria conta).
+- [docs/DEMO.md](docs/DEMO.md): prompts prontos para apresentar o projeto.
 - [docs/claude-skill/](docs/claude-skill/): skill do Claude Code para Motion Canvas.
 - [CLAUDE.md](CLAUDE.md): instruções do projeto para o Claude Code.
 

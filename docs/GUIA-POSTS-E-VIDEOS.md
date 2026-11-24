@@ -130,29 +130,9 @@ A conta é pessoal, então não dá para postar ou agendar por API. O fluxo é: 
 
 ### Agendar pelo Metricool (publica sozinho)
 
-O Claude agenda pelo conector do **Metricool**. Testado em 24/11/2026: o post foi publicado sozinho no horário marcado. O plano grátis permite **20 posts agendados por mês**. O projeto não traz nenhuma conta: **cada pessoa conecta a sua**.
+O Claude agenda pelo conector do **Metricool**, com as mídias no **Google Drive**. Testado em 24/11/2026: o post foi publicado sozinho no horário marcado. O plano grátis permite **20 posts agendados por mês**, e cada pessoa conecta a própria conta.
 
-**Configurar (uma vez, com a sua conta):**
-1. Crie uma conta grátis em [metricool.com](https://metricool.com).
-2. No Metricool, conecte o seu **Instagram**. Se quiser postar no Facebook também, conecte uma **Página do Facebook** (perfil pessoal não funciona).
-3. No Claude, conecte o conector **Metricool**: em claude.ai, **Configurações → Conectores**. Depois abra uma sessão nova do Claude Code.
-4. **Google Drive** (é por ele que as imagens e vídeos chegam ao Metricool, sem precisar de GitHub):
-   - no Metricool, ligue o **Google Drive** (nas conexões da sua marca);
-   - no Claude, conecte o conector **Google Drive** (claude.ai → Configurações → Conectores);
-   - instale o **[Google Drive para computador](https://www.google.com/drive/download/)**, que cria a pasta `Meu Drive` sincronizada no seu PC.
-5. Peça ao Claude: *"confere minha conta do Metricool"*. Ele mostra quais redes estão conectadas.
-
-**Agendar:**
-1. Monte o kit (passo acima).
-2. Prepare as mídias:
-   ```powershell
-   .\.venv\Scripts\python.exe tools\metricool.py kits\<nome>.json
-   ```
-   O script copia as imagens e vídeos para `Meu Drive/FatecVideos/<nome>/` e escreve `kits/<nome>.metricool.json` com data, legenda e tipo de cada post. Se a pasta do Drive estiver em outro lugar, use `--pasta="G:\Meu Drive"`.
-   - Sem o Google Drive para computador, os arquivos ficam em `output/publicar/<nome>/drive/`. Suba essa pasta pelo drive.google.com (Novo → Upload de pasta).
-3. Espere o Drive sincronizar e peça ao Claude: *"agenda o kit `<nome>` no Metricool"*. Ele acha cada arquivo no seu Drive, mostra cada post (imagem, legenda, rede e horário), agenda só depois do seu OK e, passado o horário, confere se publicou.
-
-O Metricool importa o arquivo pelo seu Drive conectado: **não é preciso deixar o arquivo público**. Se preferir o modo antigo (links de um repositório público do GitHub), use `--github`.
+Configuração, passo a passo e solução de problemas: **[METRICOOL.md](METRICOOL.md)**.
 
 Para agendar ou postar automaticamente sem o Metricool (exige conta profissional no Instagram e Página no Facebook), veja [POSTAGEM-AUTOMATICA.md](POSTAGEM-AUTOMATICA.md).
 
