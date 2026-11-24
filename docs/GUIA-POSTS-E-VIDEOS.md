@@ -128,7 +128,20 @@ A conta é pessoal, então não dá para postar ou agendar por API. O fluxo é: 
    - `agenda.ics`, que você importa no Google Agenda ou no calendário do celular para ganhar **um lembrete 15 min antes** de cada post.
 4. Passe a pasta para o celular (Google Drive, OneDrive, WhatsApp para você mesmo…) e poste na hora do lembrete.
 
-Para agendar ou postar automaticamente (exige conta profissional no Instagram e Página no Facebook), veja [POSTAGEM-AUTOMATICA.md](POSTAGEM-AUTOMATICA.md).
+### Agendar pelo Metricool (publica sozinho)
+
+O Instagram do projeto está conectado ao **Metricool**, e o Claude agenda pelo conector dele. Testado em 24/11/2026: o post foi publicado sozinho no horário marcado. O plano grátis permite **20 posts agendados por mês**. O Facebook entra quando uma Página for conectada no Metricool.
+
+1. Monte o kit (passo acima).
+2. Prepare as mídias:
+   ```powershell
+   .\.venv\Scripts\python.exe tools\metricool.py kits\<nome>.json
+   ```
+   O script copia as imagens e vídeos para `publicar/<nome>/` e escreve `kits/<nome>.metricool.json` com data, legenda e links públicos de cada post. Depois faz o commit. O Metricool só aceita mídia por link, então **esses arquivos ficam públicos no GitHub**.
+3. Envie para o GitHub com `git push`.
+4. Peça ao Claude: *"agenda o kit `<nome>` no Metricool"*. Ele mostra cada post (imagem, legenda, rede e horário), agenda só depois do seu OK e, passado o horário, confere se publicou.
+
+Para agendar ou postar automaticamente sem o Metricool (exige conta profissional no Instagram e Página no Facebook), veja [POSTAGEM-AUTOMATICA.md](POSTAGEM-AUTOMATICA.md).
 
 ## 8. Gerador automático (posts e Reels variados)
 

@@ -11,7 +11,13 @@ Posts, carrosséis, vídeos e animações em Motion Canvas para a Fatec Taquarit
 - **Logo oficial:** `src/images/logo-fatec-taquaritinga.png` (376×120, fundo transparente). Nunca recolorir nem redesenhar; em fundo escuro ou foto, usar sobre uma plaquinha branca (como no gerador, `logo()` em `src/gen/estilos.tsx`).
 - Escrever "Taquaritinga" (com Q). Link do vestibular: vestibular.fatec.sp.gov.br.
 - **Antes de montar posts ou kits, conferir o calendário oficial** (vestibular.fatec.sp.gov.br/calendario). Não publicar "Inscrições abertas" fora do período: a chamada final vem de `CTA` em `src/theme.tsx` (`PROXIMO_VESTIBULAR` ou `INSCRICOES_ABERTAS`).
-- A conta do Instagram/Facebook é **pessoal** e o usuário não quer torná-la profissional: não há API para postar/agendar. O fluxo é o kit de publicação (`tools/kit.py` + `kits/*.json`) e o usuário posta pelo app. Para quem tiver conta profissional + Página: [docs/POSTAGEM-AUTOMATICA.md](docs/POSTAGEM-AUTOMATICA.md) e `tools/postar.py` (não testado contra a API real).
+## Postagem e agendamento (Metricool)
+
+- **Agendar pelo conector do Metricool** (marca `blogId 8333480`, fuso `America/Sao_Paulo`). Testado em 24/11/2026: publicou sozinho no **Instagram @koyath2** (post `instagram.com/p/DgIB92giAQ6`). **Facebook ainda não conectado** (só aceita Página): conferir com `getBrandSettings` antes de incluir.
+- Plano grátis: **20 posts agendados por mês**. Avisar quando o mês estiver perto do limite (`getScheduledPosts`).
+- Fluxo: gerar → renderizar → `tools/kit.py kits/<nome>.json` → `tools/metricool.py kits/<nome>.json` (copia as mídias para `publicar/<nome>/`, escreve `kits/<nome>.metricool.json` com data, legenda, tipo e URLs `raw.githubusercontent.com`, e faz commit) → `git push` (pelo terminal do usuário) → conferir que as URLs abrem (HTTP 200) → `createScheduledPost` para cada entrada → anotar o `id` em `metricoolId` → depois do horário, conferir o status com `getScheduledPosts`.
+- **Sempre mostrar ao usuário imagem, legenda, redes e horário e esperar o OK antes de agendar.** Avisar que as mídias ficam públicas no GitHub. Data não pode estar no passado.
+- Alternativas: kit para postar pelo app (`agenda.ics` com lembretes) e, para conta profissional + Página sem Metricool, [docs/POSTAGEM-AUTOMATICA.md](docs/POSTAGEM-AUTOMATICA.md) + `tools/postar.py` (não testado).
 
 ## Gerador automático (padrão para peças novas)
 
