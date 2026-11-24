@@ -8,6 +8,7 @@ Posts, carrosséis, vídeos e animações em Motion Canvas para a Fatec Taquarit
 - Fontes de imagem, licenças e cuidados: ver [docs/BANCOS-DE-IMAGEM.md](docs/BANCOS-DE-IMAGEM.md); passo a passo em [docs/GUIA-POSTS-E-VIDEOS.md](docs/GUIA-POSTS-E-VIDEOS.md). Usar só bancos com uso comercial liberado: fotos reais da Fatec (com autorização) → Pexels / Unsplash (gratuitas, não Unsplash+) / Pixabay. Nada de bancos pagos (Magnific/Freepik, Unsplash+).
 - Nunca apresentar modelo de banco de imagem como aluno da Fatec.
 - Música: evitar faixas com Content ID; o padrão é a trilha original de `tools/musica.py`.
+- **Logo oficial:** `src/images/logo-fatec-taquaritinga.png` (376×120, fundo transparente). Nunca recolorir nem redesenhar; em fundo escuro ou foto, usar sobre uma plaquinha branca (como no gerador, `logo()` em `src/gen/estilos.tsx`).
 - Escrever "Taquaritinga" (com Q). Link do vestibular: vestibular.fatec.sp.gov.br.
 - **Antes de montar posts ou kits, conferir o calendário oficial** (vestibular.fatec.sp.gov.br/calendario). Não publicar "Inscrições abertas" fora do período: a chamada final vem de `CTA` em `src/theme.tsx` (`PROXIMO_VESTIBULAR` ou `INSCRICOES_ABERTAS`).
 - A conta do Instagram/Facebook é **pessoal** e o usuário não quer torná-la profissional: não há API para postar/agendar. O fluxo é o kit de publicação (`tools/kit.py` + `kits/*.json`) e o usuário posta pelo app. Para quem tiver conta profissional + Página: [docs/POSTAGEM-AUTOMATICA.md](docs/POSTAGEM-AUTOMATICA.md) e `tools/postar.py` (não testado contra a API real).

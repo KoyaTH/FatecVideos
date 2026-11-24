@@ -4,9 +4,12 @@
 import {Circle, Gradient, Img, Line, Node, Rect, Txt} from '@motion-canvas/2d';
 import {fit, FontSpec, GEN_FONT} from './fit';
 import {enquadrar, FOTOS} from './fotos';
+import logoFatec from '../images/logo-fatec-taquaritinga.png';
 import {Fundo, Paleta, PostSpec} from './spec';
 
 const SITE = 'vestibular.fatec.sp.gov.br';
+const LOGO_W = 376;
+const LOGO_H = 120;
 
 // ---------- Palettes ----------
 export interface Pal {
@@ -84,13 +87,19 @@ function fundo(tipo: Fundo, p: Pal, W: number, H: number) {
   );
 }
 
-function logo(p: Pal, x: number, y: number, scale: number) {
+/**
+ * Official Fatec Taquaritinga logo (src/images/logo-fatec-taquaritinga.png, 376x120),
+ * left edge at `left`, vertically centered on `y`. Never recolored: on dark
+ * backgrounds (or photos) it sits on a white rounded plate.
+ */
+function logo(p: Pal, left: number, y: number, width: number) {
+  const h = (width * LOGO_H) / LOGO_W;
+  const onDark = p.dark || p.text === '#ffffff';
+  const pad = width * 0.07;
   return (
-    <Node x={x} y={y} scale={scale}>
-      <Rect width={430} height={170} radius={22} fill="#d71920">
-        <Txt text="Fatec" fontFamily={GEN_FONT} fontWeight={800} fontSize={124} fill="#ffffff" />
-      </Rect>
-      <Txt y={135} text="Taquaritinga" fontFamily={GEN_FONT} fontWeight={600} fontSize={52} fill={p.text} />
+    <Node x={left + width / 2} y={y}>
+      {onDark && <Rect width={width + 2 * pad} height={h + 2 * pad} radius={pad * 1.2} fill="#ffffff" shadowColor="rgba(0,0,0,0.25)" shadowBlur={pad * 1.5} />}
+      <Img src={logoFatec} width={width} />
     </Node>
   );
 }
@@ -278,7 +287,7 @@ function cabecalho(s: PostSpec, p: Pal, W: number, H: number, u: number) {
   // The tag sits on a pill so it stays readable over photos and patterns.
   return (
     <Node>
-      {logo(p, -W / 2 + M + 82 * u, -H / 2 + 64 * u, 0.38 * u)}
+      {logo(p, -W / 2 + M + 14 * u, -H / 2 + 66 * u, 230 * u)}
       <Rect
         x={W / 2 - M - (r.width + 2 * padX) / 2}
         y={-H / 2 + 64 * u}
