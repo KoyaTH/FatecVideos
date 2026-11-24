@@ -130,8 +130,16 @@ A conta é pessoal, então não dá para postar ou agendar por API. O fluxo é: 
 
 ### Agendar pelo Metricool (publica sozinho)
 
-O Instagram do projeto está conectado ao **Metricool**, e o Claude agenda pelo conector dele. Testado em 24/11/2026: o post foi publicado sozinho no horário marcado. O plano grátis permite **20 posts agendados por mês**. O Facebook entra quando uma Página for conectada no Metricool.
+O Claude agenda pelo conector do **Metricool**. Testado em 24/11/2026: o post foi publicado sozinho no horário marcado. O plano grátis permite **20 posts agendados por mês**. O projeto não traz nenhuma conta: **cada pessoa conecta a sua**.
 
+**Configurar (uma vez, com a sua conta):**
+1. Crie uma conta grátis em [metricool.com](https://metricool.com).
+2. No Metricool, conecte o seu **Instagram**. Se quiser postar no Facebook também, conecte uma **Página do Facebook** (perfil pessoal não funciona).
+3. No Claude, conecte o conector **Metricool**: em claude.ai, **Configurações → Conectores**. Depois abra uma sessão nova do Claude Code.
+4. Use um repositório **público seu** no GitHub (fork ou cópia deste). O Metricool baixa as mídias pelo link `raw.githubusercontent.com`, que o script monta a partir do `origin` do seu git.
+5. Peça ao Claude: *"confere minha conta do Metricool"*. Ele mostra quais redes estão conectadas.
+
+**Agendar:**
 1. Monte o kit (passo acima).
 2. Prepare as mídias:
    ```powershell
