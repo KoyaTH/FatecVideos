@@ -11,6 +11,7 @@ export default defineConfig({
         './src/carrossel.ts',
         './src/post.ts',
         './src/post-video.ts',
+        './src/post-dezembro.ts',
         // './src/matricula-video.ts': its scene (src/scenes/video-matricula.tsx) was lost;
         // re-add this line after rebuilding it with the 2027 enrollment dates.
       ],

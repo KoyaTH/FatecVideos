@@ -68,6 +68,7 @@ Buscar em inglês costuma trazer mais resultados.
 | `unsplash-N_nAAwnBDy8-tecnico-estoque.jpg` | Unsplash (gratuita) | Post de Gestão da Produção, capa do carrossel, abertura do vídeo de 20 s |
 | `unsplash-5jugXEl5YHM-operadora-fabrica.jpg` | Unsplash (gratuita) | Último slide do carrossel e fecho do vídeo de 20 s |
 | `unsplash-RHqKnRACsqs-alunos-sala.jpg` | Unsplash (gratuita) | Posts da prova (Dia da Prova e Checklist) |
+| `pexels-6683579-sala-prova.jpg` | Pexels | Post "Prova em 13 de dezembro" (`post-dezembro`) |
 
 ## Como usar no projeto
 
