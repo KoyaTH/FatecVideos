@@ -1,0 +1,23 @@
+{
+  "voice": "pt-BR-FranciscaNeural",
+  "rate": "+6%",
+  "gap": 0.45,
+  "segments": [
+    {
+      "id": "exemplo-reels-1",
+      "text": "A prova do Vestibular Fatec é neste domingo, treze de dezembro, às treze horas."
+    },
+    {
+      "id": "exemplo-reels-2",
+      "text": "Os portões abrem ao meio-dia e fecham às treze horas em ponto. Chegue com uma hora de antecedência."
+    },
+    {
+      "id": "exemplo-reels-3",
+      "text": "Leve caneta preta ou azul, lápis número dois, borracha e um documento original com foto."
+    },
+    {
+      "id": "exemplo-reels-4",
+      "text": "Confira o seu local de prova na Área do Candidato, em vestibular ponto fatec ponto ésse pê ponto gov ponto bê érre. Boa prova!"
+    }
+  ]
+}

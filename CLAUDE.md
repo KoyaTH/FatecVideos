@@ -10,7 +10,14 @@ Posts, carrosséis, vídeos e animações em Motion Canvas para a Fatec Taquarit
 - Música: evitar faixas com Content ID; o padrão é a trilha original de `tools/musica.py`.
 - Escrever "Taquaritinga" (com Q). Link do vestibular: vestibular.fatec.sp.gov.br.
 - **Antes de montar posts ou kits, conferir o calendário oficial** (vestibular.fatec.sp.gov.br/calendario). Não publicar "Inscrições abertas" fora do período: a chamada final vem de `CTA` em `src/theme.tsx` (`PROXIMO_VESTIBULAR` ou `INSCRICOES_ABERTAS`).
-- A conta do Instagram/Facebook é **pessoal** e o usuário não quer torná-la profissional: não há API para postar/agendar. O fluxo é o kit de publicação (`tools/kit.py` + `kits/*.json`) e o usuário posta pelo app.
+- A conta do Instagram/Facebook é **pessoal** e o usuário não quer torná-la profissional: não há API para postar/agendar. O fluxo é o kit de publicação (`tools/kit.py` + `kits/*.json`) e o usuário posta pelo app. Para quem tiver conta profissional + Página: [docs/POSTAGEM-AUTOMATICA.md](docs/POSTAGEM-AUTOMATICA.md) e `tools/postar.py` (não testado contra a API real).
+
+## Gerador automático (padrão para peças novas)
+
+- Para posts/Reels novos, **use o gerador** em vez de criar cenas fixas: escreva `pedidos/<nome>.json` só com conteúdo (chamada, titulo, destaque, texto, itens, temas, legenda, data/hora; `narracao` por slide no Reels), rode `tools/gerar.py`, renderize `gerador-posts` ou `gerador-reels` e monte o kit com `tools/kit.py`.
+- O gerador escolhe estilo (faixa, cheia, dividido, numero, lista, polaroid), paleta, fundo, alinhamento, animação e foto, evitando repetir o histórico (`kits/historico.json`). Texto é ajustado por `src/gen/fit.ts`; fotos são enquadradas pelo ponto de foco cadastrado em `src/gen/fotos.ts`.
+- Depois de renderizar, **conferir visualmente** os PNGs/quadros antes de entregar. Renderizar e montar o kit de um pedido antes de gerar o próximo (as saídas são sobrescritas).
+- Variedade de fotos depende de `src/gen/fotos.ts`: hoje só há 1 foto; propor mais fotos (com aprovação de download) quando o tema não combinar.
 
 ## Estrutura
 

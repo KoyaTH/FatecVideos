@@ -12,6 +12,9 @@ export default defineConfig({
         './src/post.ts',
         './src/post-video.ts',
         './src/post-dezembro.ts',
+        // Automatic generator (tools/gerar.py fills the queues in src/gen/).
+        './src/gerador-posts.ts',
+        './src/gerador-reels.ts',
         // './src/matricula-video.ts': its scene (src/scenes/video-matricula.tsx) was lost;
         // re-add this line after rebuilding it with the 2027 enrollment dates.
       ],

@@ -5,3 +5,6 @@ dist
 .venv
 __pycache__/
 .claude/settings.local.json
+.env
+src/gen/reels-musica.wav
+src/gen/reels-roteiro.wav

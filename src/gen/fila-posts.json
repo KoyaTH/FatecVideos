@@ -1,0 +1,97 @@
+{
+  "posts": [
+    {
+      "id": "exemplo-posts-1",
+      "estilo": "numero",
+      "paleta": "claro",
+      "fundo": "circulos",
+      "alinhamento": "centro",
+      "foto": "sala",
+      "lado": 1,
+      "selo": "Vestibular Fatec 1º sem. 2027",
+      "chamada": "Anota aí",
+      "titulo": "Dia da prova",
+      "destaque": "13/12",
+      "texto": "Domingo, às 13h. Os portões fecham às 13h em ponto: chegue com 1 hora de antecedência."
+    },
+    {
+      "id": "exemplo-posts-2",
+      "estilo": "cheia",
+      "paleta": "vermelho",
+      "fundo": "grade",
+      "alinhamento": "esquerda",
+      "foto": "sala",
+      "lado": -1,
+      "selo": "Vestibular Fatec 1º sem. 2027",
+      "chamada": "Checklist",
+      "titulo": "O que levar no dia da prova",
+      "itens": [
+        "Caneta esferográfica preta ou azul",
+        "Lápis nº 2 e borracha",
+        "Documento original com foto"
+      ]
+    },
+    {
+      "id": "exemplo-posts-3",
+      "estilo": "polaroid",
+      "paleta": "laranja",
+      "fundo": "liso",
+      "alinhamento": "centro",
+      "foto": "sala",
+      "lado": 1,
+      "selo": "Vestibular Fatec 1º sem. 2027",
+      "chamada": "Fique ligado",
+      "titulo": "Seu local de prova sai dia",
+      "destaque": "09/12",
+      "texto": "A partir das 15h, na Área do Candidato. Não há envio por e-mail nem pelos Correios."
+    },
+    {
+      "id": "exemplo-posts-4",
+      "estilo": "faixa",
+      "paleta": "azul",
+      "fundo": "diagonal",
+      "alinhamento": "esquerda",
+      "foto": "sala",
+      "lado": -1,
+      "selo": "Vestibular Fatec 1º sem. 2027",
+      "chamada": "Conheça o curso",
+      "titulo": "Sistemas para Internet",
+      "texto": "Desenvolvimento web, aplicativos, UX/UI, redes e banco de dados em um curso superior gratuito.",
+      "itens": [
+        "Ensino superior gratuito",
+        "Curso presencial"
+      ]
+    },
+    {
+      "id": "exemplo-posts-5",
+      "estilo": "dividido",
+      "paleta": "claro",
+      "fundo": "circulos",
+      "alinhamento": "centro",
+      "foto": "sala",
+      "lado": 1,
+      "selo": "Vestibular Fatec 1º sem. 2027",
+      "chamada": "Gestão da Produção Industrial",
+      "titulo": "Lidere a indústria do futuro",
+      "destaque": "3 ANOS",
+      "texto": "Planeje operações, otimize processos e impulsione a competitividade das organizações."
+    },
+    {
+      "id": "exemplo-posts-6",
+      "estilo": "lista",
+      "paleta": "vermelho",
+      "fundo": "grade",
+      "alinhamento": "esquerda",
+      "foto": "sala",
+      "lado": 1,
+      "selo": "Vestibular Fatec 1º sem. 2027",
+      "chamada": "Depois da prova",
+      "titulo": "Próximos passos",
+      "itens": [
+        "16/12, 15h: gabarito oficial",
+        "18/01, 15h: resultado e lista da 1ª chamada",
+        "19 a 21/01: matrícula da 1ª chamada"
+      ]
+    }
+  ]
+}

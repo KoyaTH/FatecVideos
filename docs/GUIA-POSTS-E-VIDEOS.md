@@ -128,7 +128,48 @@ A conta é pessoal, então não dá para postar ou agendar por API. O fluxo é: 
    - `agenda.ics`, que você importa no Google Agenda ou no calendário do celular para ganhar **um lembrete 15 min antes** de cada post.
 4. Passe a pasta para o celular (Google Drive, OneDrive, WhatsApp para você mesmo…) e poste na hora do lembrete.
 
-## 8. Usando com o Claude Code
+Para agendar ou postar automaticamente (exige conta profissional no Instagram e Página no Facebook), veja [POSTAGEM-AUTOMATICA.md](POSTAGEM-AUTOMATICA.md).
+
+## 8. Gerador automático (posts e Reels variados)
+
+Para não ficar tudo igual, o gerador monta cada peça escolhendo sozinho o visual. Você (ou o Claude) só descreve o **conteúdo**.
+
+| O que varia | Opções |
+|---|---|
+| Estilo de layout | `faixa` (foto em cima), `cheia` (foto de fundo inteira), `dividido` (foto de um lado), `numero` (data/número gigante com foto em círculo), `lista` (itens em cartões), `polaroid` (foto inclinada) |
+| Paleta | `azul`, `laranja`, `vermelho`, `claro` |
+| Fundo | `grade`, `diagonal`, `circulos`, `liso` |
+| Alinhamento | `esquerda`, `centro` |
+| Animação (Reels) | `subir`, `pop`, `lado`, `fade` |
+| Foto | a que combina com os `temas` do item, revezando |
+
+- **Sem repetição:** o gerador evita o que foi usado nos últimos posts (histórico em `kits/historico.json`).
+- **O texto se ajusta sozinho:** tamanho e quebra de linha são calculados para nunca estourar nem encostar em nada, seja curto ou longo.
+- **Foto enquadrada sozinha:** cada foto tem um ponto de foco (o rosto) em `src/gen/fotos.ts`, e o gerador corta a foto mantendo esse ponto visível em qualquer layout.
+- **Funciona em 4:5 e 9:16:** o mesmo conteúdo vira post do feed (1080×1350) ou Reels (1080×1920).
+
+### Como usar
+
+1. Escreva um pedido em `pedidos/<nome>.json`, só com o conteúdo. Modelos: `pedidos/exemplo-posts.json` e `pedidos/exemplo-reels.json`. Cada item pode ter `chamada`, `titulo`, `destaque`, `texto`, `itens`, `temas`, `legenda`, `data` e `hora`. No Reels, cada item é um slide e o campo `narracao` é a fala.
+2. Gere:
+   ```powershell
+   .\.venv\Scripts\python.exe tools\gerar.py pedidos\exemplo-posts.json
+   ```
+   No Reels, isso também gera a narração, a música e a mixagem.
+3. Clique em **RENDER** em `src/gerador-posts` (um PNG por post) ou `src/gerador-reels` (MP4 com áudio).
+4. Monte o kit: `.\.venv\Scripts\python.exe tools\kit.py kits\<nome>.json`.
+
+Para forçar algo num item, inclua `"estilo"`, `"paleta"`, `"fundo"`, `"alinhamento"` ou `"foto"`. O resto continua automático.
+
+> Renderize e monte o kit de um pedido **antes** de gerar o próximo: `output/gerador-posts/` e `output/gerador-reels.mp4` são sobrescritos a cada render.
+
+### Mais fotos = mais variedade
+
+O gerador só reveza entre as fotos cadastradas em `src/gen/fotos.ts`. Para adicionar uma:
+1. Salve a foto em `src/images/` (bancos e regras em [BANCOS-DE-IMAGEM.md](BANCOS-DE-IMAGEM.md)).
+2. Cadastre a foto em `src/gen/fotos.ts` com largura, altura, ponto de foco (rosto), temas e crédito.
+
+## 9. Usando com o Claude Code
 
 O arquivo [`CLAUDE.md`](../CLAUDE.md) na raiz já explica o projeto para o Claude. Para o Claude saber Motion Canvas também em outros projetos, instale a skill:
 

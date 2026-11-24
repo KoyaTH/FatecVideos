@@ -1,0 +1,44 @@
+{
+  "nome": "exemplo-posts",
+  "tipo": "posts",
+  "selo": "Vestibular Fatec 1º sem. 2027",
+  "itens": [
+    {
+      "data": "2026-12-07", "hora": "12:00", "temas": ["prova"],
+      "chamada": "Anota aí", "titulo": "Dia da prova", "destaque": "13/12",
+      "texto": "Domingo, às 13h. Os portões fecham às 13h em ponto: chegue com 1 hora de antecedência.",
+      "legenda": "Prova do Vestibular Fatec: 13/12, às 13h. Portões fecham às 13h em ponto! #Fatectq #VestibularFatec"
+    },
+    {
+      "data": "2026-12-10", "hora": "18:00", "temas": ["prova"],
+      "chamada": "Checklist", "titulo": "O que levar no dia da prova",
+      "itens": ["Caneta esferográfica preta ou azul", "Lápis nº 2 e borracha", "Documento original com foto"],
+      "legenda": "Separe tudo na véspera! ✅ #Fatectq #VestibularFatec"
+    },
+    {
+      "data": "2026-12-08", "hora": "18:00", "temas": ["vestibular", "estudantes"],
+      "chamada": "Fique ligado", "titulo": "Seu local de prova sai dia", "destaque": "09/12",
+      "texto": "A partir das 15h, na Área do Candidato. Não há envio por e-mail nem pelos Correios.",
+      "legenda": "Local de prova: Área do Candidato, a partir de 09/12 às 15h. #Fatectq #VestibularFatec"
+    },
+    {
+      "data": "2026-11-26", "hora": "18:00", "temas": ["tecnologia"],
+      "chamada": "Conheça o curso", "titulo": "Sistemas para Internet",
+      "texto": "Desenvolvimento web, aplicativos, UX/UI, redes e banco de dados em um curso superior gratuito.",
+      "itens": ["Ensino superior gratuito", "Curso presencial"],
+      "legenda": "Conheça Sistemas para Internet na Fatec Taquaritinga! #Fatectq #SistemasParaInternet"
+    },
+    {
+      "data": "2026-11-28", "hora": "18:00", "temas": ["industria"],
+      "chamada": "Gestão da Produção Industrial", "titulo": "Lidere a indústria do futuro", "destaque": "3 ANOS",
+      "texto": "Planeje operações, otimize processos e impulsione a competitividade das organizações.",
+      "legenda": "Gestão da Produção Industrial: em 3 anos, pronto para liderar. #Fatectq #GPI"
+    },
+    {
+      "data": "2026-12-14", "hora": "18:00", "temas": ["estudantes"],
+      "chamada": "Depois da prova", "titulo": "Próximos passos",
+      "itens": ["16/12, 15h: gabarito oficial", "18/01, 15h: resultado e lista da 1ª chamada", "19 a 21/01: matrícula da 1ª chamada"],
+      "legenda": "Já fez a prova? Veja as próximas datas. #Fatectq #VestibularFatec"
+    }
+  ]
+}

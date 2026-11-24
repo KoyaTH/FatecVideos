@@ -1,0 +1,28 @@
+{
+  "nome": "exemplo-reels",
+  "tipo": "reels",
+  "titulo": "Reels: prova do vestibular",
+  "data": "2026-12-11", "hora": "18:00",
+  "selo": "Vestibular Fatec",
+  "legenda": "Prova do Vestibular Fatec é domingo, 13/12! Veja o que precisa saber. 🔊 #Fatectq #VestibularFatec",
+  "itens": [
+    {
+      "temas": ["prova"], "chamada": "Vestibular Fatec", "titulo": "A prova é domingo", "destaque": "13/12",
+      "narracao": "A prova do Vestibular Fatec é neste domingo, treze de dezembro, às treze horas."
+    },
+    {
+      "temas": ["vestibular"], "chamada": "Atenção", "titulo": "Portões fecham às 13h",
+      "texto": "Eles abrem ao meio-dia. Depois das 13h, ninguém entra.",
+      "narracao": "Os portões abrem ao meio-dia e fecham às treze horas em ponto. Chegue com uma hora de antecedência."
+    },
+    {
+      "temas": ["prova"], "titulo": "Leve",
+      "itens": ["Caneta preta ou azul", "Lápis nº 2 e borracha", "Documento original com foto"],
+      "narracao": "Leve caneta preta ou azul, lápis número dois, borracha e um documento original com foto."
+    },
+    {
+      "temas": ["estudantes"], "titulo": "Boa prova!", "texto": "Confira seu local na Área do Candidato.",
+      "narracao": "Confira o seu local de prova na Área do Candidato, em vestibular ponto fatec ponto ésse pê ponto gov ponto bê érre. Boa prova!"
+    }
+  ]
+}

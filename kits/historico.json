@@ -1,0 +1,102 @@
+[
+  {
+    "estilo": "numero",
+    "paleta": "claro",
+    "fundo": "circulos",
+    "alinhamento": "centro",
+    "foto": "sala",
+    "animacao": null,
+    "pedido": "exemplo-posts",
+    "quando": "2026-11-24T08:31:13"
+  },
+  {
+    "estilo": "cheia",
+    "paleta": "vermelho",
+    "fundo": "grade",
+    "alinhamento": "esquerda",
+    "foto": "sala",
+    "animacao": null,
+    "pedido": "exemplo-posts",
+    "quando": "2026-11-24T08:31:13"
+  },
+  {
+    "estilo": "polaroid",
+    "paleta": "laranja",
+    "fundo": "liso",
+    "alinhamento": "centro",
+    "foto": "sala",
+    "animacao": null,
+    "pedido": "exemplo-posts",
+    "quando": "2026-11-24T08:31:13"
+  },
+  {
+    "estilo": "faixa",
+    "paleta": "azul",
+    "fundo": "diagonal",
+    "alinhamento": "esquerda",
+    "foto": "sala",
+    "animacao": null,
+    "pedido": "exemplo-posts",
+    "quando": "2026-11-24T08:31:13"
+  },
+  {
+    "estilo": "dividido",
+    "paleta": "claro",
+    "fundo": "circulos",
+    "alinhamento": "centro",
+    "foto": "sala",
+    "animacao": null,
+    "pedido": "exemplo-posts",
+    "quando": "2026-11-24T08:31:13"
+  },
+  {
+    "estilo": "lista",
+    "paleta": "vermelho",
+    "fundo": "grade",
+    "alinhamento": "esquerda",
+    "foto": "sala",
+    "animacao": null,
+    "pedido": "exemplo-posts",
+    "quando": "2026-11-24T08:31:13"
+  },
+  {
+    "estilo": "numero",
+    "paleta": "laranja",
+    "fundo": "liso",
+    "alinhamento": "centro",
+    "foto": "sala",
+    "animacao": "pop",
+    "pedido": "exemplo-reels",
+    "quando": "2026-11-24T08:31:20"
+  },
+  {
+    "estilo": "cheia",
+    "paleta": "azul",
+    "fundo": "diagonal",
+    "alinhamento": "esquerda",
+    "foto": "sala",
+    "animacao": "pop",
+    "pedido": "exemplo-reels",
+    "quando": "2026-11-24T08:31:20"
+  },
+  {
+    "estilo": "polaroid",
+    "paleta": "claro",
+    "fundo": "circulos",
+    "alinhamento": "centro",
+    "foto": "sala",
+    "animacao": "pop",
+    "pedido": "exemplo-reels",
+    "quando": "2026-11-24T08:31:20"
+  },
+  {
+    "estilo": "faixa",
+    "paleta": "vermelho",
+    "fundo": "grade",
+    "alinhamento": "esquerda",
+    "foto": "sala",
+    "animacao": "pop",
+    "pedido": "exemplo-reels",
+    "quando": "2026-11-24T08:31:20"
+  }
+]

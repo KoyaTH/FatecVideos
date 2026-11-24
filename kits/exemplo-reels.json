@@ -1,0 +1,16 @@
+{
+  "nome": "exemplo-reels",
+  "lembrete_minutos_antes": 15,
+  "posts": [
+    {
+      "data": "2026-12-11",
+      "hora": "18:00",
+      "tipo": "Reels",
+      "titulo": "Reels: prova do vestibular (pop, 29 s)",
+      "arquivos": [
+        "output/gerador-reels.mp4"
+      ],
+      "legenda": "Prova do Vestibular Fatec é domingo, 13/12! Veja o que precisa saber. 🔊 #Fatectq #VestibularFatec"
+    }
+  ]
+}

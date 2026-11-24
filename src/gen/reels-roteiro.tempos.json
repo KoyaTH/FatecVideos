@@ -1,0 +1,25 @@
+{
+  "total": 27.702,
+  "segments": [
+    {
+      "id": "exemplo-reels-1",
+      "start": 0.0,
+      "duration": 5.376
+    },
+    {
+      "id": "exemplo-reels-2",
+      "start": 5.826,
+      "duration": 6.6
+    },
+    {
+      "id": "exemplo-reels-3",
+      "start": 12.876,
+      "duration": 5.928
+    },
+    {
+      "id": "exemplo-reels-4",
+      "start": 19.254,
+      "duration": 8.448
+    }
+  ]
+}

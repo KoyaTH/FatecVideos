@@ -1,0 +1,66 @@
+{
+  "nome": "exemplo-posts",
+  "lembrete_minutos_antes": 15,
+  "posts": [
+    {
+      "data": "2026-12-07",
+      "hora": "12:00",
+      "tipo": "Feed",
+      "titulo": "Dia da prova (numero, claro)",
+      "arquivos": [
+        "output/gerador-posts/000000.png"
+      ],
+      "legenda": "Prova do Vestibular Fatec: 13/12, às 13h. Portões fecham às 13h em ponto! #Fatectq #VestibularFatec"
+    },
+    {
+      "data": "2026-12-10",
+      "hora": "18:00",
+      "tipo": "Feed",
+      "titulo": "O que levar no dia da prova (cheia, vermelho)",
+      "arquivos": [
+        "output/gerador-posts/000001.png"
+      ],
+      "legenda": "Separe tudo na véspera! ✅ #Fatectq #VestibularFatec"
+    },
+    {
+      "data": "2026-12-08",
+      "hora": "18:00",
+      "tipo": "Feed",
+      "titulo": "Seu local de prova sai dia (polaroid, laranja)",
+      "arquivos": [
+        "output/gerador-posts/000002.png"
+      ],
+      "legenda": "Local de prova: Área do Candidato, a partir de 09/12 às 15h. #Fatectq #VestibularFatec"
+    },
+    {
+      "data": "2026-11-26",
+      "hora": "18:00",
+      "tipo": "Feed",
+      "titulo": "Sistemas para Internet (faixa, azul)",
+      "arquivos": [
+        "output/gerador-posts/000003.png"
+      ],
+      "legenda": "Conheça Sistemas para Internet na Fatec Taquaritinga! #Fatectq #SistemasParaInternet"
+    },
+    {
+      "data": "2026-11-28",
+      "hora": "18:00",
+      "tipo": "Feed",
+      "titulo": "Lidere a indústria do futuro (dividido, claro)",
+      "arquivos": [
+        "output/gerador-posts/000004.png"
+      ],
+      "legenda": "Gestão da Produção Industrial: em 3 anos, pronto para liderar. #Fatectq #GPI"
+    },
+    {
+      "data": "2026-12-14",
+      "hora": "18:00",
+      "tipo": "Feed",
+      "titulo": "Próximos passos (lista, vermelho)",
+      "arquivos": [
+        "output/gerador-posts/000005.png"
+      ],
+      "legenda": "Já fez a prova? Veja as próximas datas. #Fatectq #VestibularFatec"
+    }
+  ]
+}

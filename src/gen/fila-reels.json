@@ -1,0 +1,78 @@
+{
+  "animacao": "pop",
+  "slides": [
+    {
+      "id": "exemplo-reels-1",
+      "estilo": "numero",
+      "paleta": "laranja",
+      "fundo": "liso",
+      "alinhamento": "centro",
+      "foto": "sala",
+      "lado": 1,
+      "selo": "Vestibular Fatec",
+      "chamada": "Vestibular Fatec",
+      "titulo": "A prova é domingo",
+      "destaque": "13/12"
+    },
+    {
+      "id": "exemplo-reels-2",
+      "estilo": "cheia",
+      "paleta": "azul",
+      "fundo": "diagonal",
+      "alinhamento": "esquerda",
+      "foto": "sala",
+      "lado": -1,
+      "selo": "Vestibular Fatec",
+      "chamada": "Atenção",
+      "titulo": "Portões fecham às 13h",
+      "texto": "Eles abrem ao meio-dia. Depois das 13h, ninguém entra."
+    },
+    {
+      "id": "exemplo-reels-3",
+      "estilo": "polaroid",
+      "paleta": "claro",
+      "fundo": "circulos",
+      "alinhamento": "centro",
+      "foto": "sala",
+      "lado": 1,
+      "selo": "Vestibular Fatec",
+      "titulo": "Leve",
+      "itens": [
+        "Caneta preta ou azul",
+        "Lápis nº 2 e borracha",
+        "Documento original com foto"
+      ]
+    },
+    {
+      "id": "exemplo-reels-4",
+      "estilo": "faixa",
+      "paleta": "vermelho",
+      "fundo": "grade",
+      "alinhamento": "esquerda",
+      "foto": "sala",
+      "lado": -1,
+      "selo": "Vestibular Fatec",
+      "titulo": "Boa prova!",
+      "texto": "Confira seu local na Área do Candidato."
+    }
+  ],
+  "total": 29.2,
+  "tempos": [
+    {
+      "start": 0.0,
+      "duration": 5.376
+    },
+    {
+      "start": 5.826,
+      "duration": 6.6
+    },
+    {
+      "start": 12.876,
+      "duration": 5.928
+    },
+    {
+      "start": 19.254,
+      "duration": 8.448
+    }
+  ]
+}
