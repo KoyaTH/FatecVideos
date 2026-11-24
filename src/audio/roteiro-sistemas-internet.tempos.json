@@ -1,0 +1,35 @@
+{
+  "total": 42.454,
+  "segments": [
+    {
+      "id": "intro",
+      "start": 0.0,
+      "duration": 2.76
+    },
+    {
+      "id": "curso",
+      "start": 3.11,
+      "duration": 7.56
+    },
+    {
+      "id": "areas",
+      "start": 11.02,
+      "duration": 9.696
+    },
+    {
+      "id": "mercado",
+      "start": 21.066,
+      "duration": 7.464
+    },
+    {
+      "id": "beneficios",
+      "start": 28.88,
+      "duration": 5.904
+    },
+    {
+      "id": "inscricoes",
+      "start": 35.134,
+      "duration": 7.32
+    }
+  ]
+}
