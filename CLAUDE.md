@@ -36,17 +36,13 @@ Conta do Metricool (deixe vazio no repositório; cada pessoa usa a sua, e o Clau
 
 ## Estrutura
 
-- `src/theme.tsx`: cores, fontes, logo e listas compartilhadas; fotos de pessoas (`FOTO_TECNICO`, `FOTO_OPERADORA`) e `photoBand()`.
-- `src/images/`: fotos, com o banco e o ID no nome do arquivo.
-- `src/poster.tsx`: layout do post único (1080×1350) e o conteúdo de cada curso (campo `photo` para a foto com pessoas).
-- Projetos Motion Canvas (editor em `http://localhost:9000/src/<nome>`):
-  - `project`: vídeo vertical de 20 s.
-  - `carrossel`: 5 slides em PNG.
-  - `post`: post único em PNG.
-  - `post-video`: post animado com narração e música.
-  - `matricula-video`: Reels vertical de matrícula. **Desativado** em `vite.config.ts`: a cena `src/scenes/video-matricula.tsx` e o áudio foram apagados em 24/11/2026 e nunca estiveram no git. O roteiro (`src/audio/roteiro-matricula.json`) e o layout (`src/matricula.tsx`, usado pelo post `post-matricula`) existem; datas ainda de jan/2026, atualizar para 2027 (calendário oficial: listas 18/01, 26/01 e 03/02/2027).
-- **Só `output/` pode ser apagada sem perda** (é regenerada pelo RENDER). `src/scenes`, `src/images`, `src/audio` e `kits/` são código e conteúdo.
-- `src/exame.tsx`: posts da prova (data/linha do tempo e checklist), com dados do FAQ e calendário oficiais; cenas `post-exame-data` e `post-exame-checklist` no projeto `post`.
+- Projetos Motion Canvas (editor em `http://localhost:9000/src/<nome>`), listados em `vite.config.ts`:
+  - `gerador-posts`: posts do feed gerados (um PNG por item da fila `src/gen/fila-posts.json`).
+  - `gerador-reels`: Reels gerado (MP4 1080×1920 com narração e música, fila `src/gen/fila-reels.json`).
+  - `post-dezembro`: post fixo da prova de 13/12 e dos cursos (`src/scenes/post-vestibular-dezembro.tsx`, autocontido).
+- `src/gen/`: gerador (estilos, ajuste de texto, fotos, filas e áudio do Reels). `src/images/`: logo oficial e fotos, com o banco e o ID no nome do arquivo.
+- Módulos antigos sem projeto no editor (importam fotos que não existem mais; não usar sem refazer): `src/theme.tsx`, `src/poster.tsx`, `src/exame.tsx`, `src/matricula.tsx` e `src/matricula-video.ts` (Reels de matrícula, cena perdida; datas de 2027: listas 18/01, 26/01 e 03/02/2027).
+- **Só `output/` pode ser apagada sem perda** (é regenerada pelo RENDER). `src/`, `kits/` e `pedidos/` são código e conteúdo.
 - `kits/*.json` + `tools/kit.py`: kit de publicação (arquivos numerados, `LEGENDAS.txt` e `agenda.ics` com lembretes) em `output/publicar/<nome>/`.
 - Áudio: `tools/narracao.py` (voz edge-tts), `tools/musica.py` (trilha original) e `tools/mixar.py` (mixagem com ducking), rodando pelo `.venv`.
 - Saídas em `output/` (fora do git).

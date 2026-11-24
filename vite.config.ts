@@ -5,12 +5,8 @@ import ffmpeg from '@motion-canvas/ffmpeg';
 export default defineConfig({
   plugins: [
     motionCanvas({
-      // Video (Reels) and Instagram carousel live side by side.
+      // Editor projects: http://localhost:9000/src/<name>
       project: [
-        './src/project.ts',
-        './src/carrossel.ts',
-        './src/post.ts',
-        './src/post-video.ts',
         './src/post-dezembro.ts',
         // Automatic generator (tools/gerar.py fills the queues in src/gen/).
         './src/gerador-posts.ts',
