@@ -33,6 +33,8 @@ Abra `http://localhost:9000/` e escolha o projeto:
 
 No editor, a prévia atualiza sozinha quando você salva um arquivo. Para exportar, clique em **RENDER** (painel *Video Settings*). Os arquivos vão para `output/`.
 
+> **O que pode apagar:** só a pasta `output/`, que o RENDER gera de novo. Não apague `src/scenes/` (o código das animações), `src/images/` (as fotos), `src/audio/` (narração e música) nem `kits/` (os planos de postagem): sem elas o projeto não funciona.
+
 ## 3. Regras de conteúdo
 
 - **Sempre ter uma pessoa em destaque** (foto) em todo post e vídeo.

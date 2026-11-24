@@ -22,7 +22,8 @@ Posts, carrosséis, vídeos e animações em Motion Canvas para a Fatec Taquarit
   - `carrossel`: 5 slides em PNG.
   - `post`: post único em PNG.
   - `post-video`: post animado com narração e música.
-  - `matricula-video`: Reels vertical (1080×1920, ~52 s) de matrícula, com narração e música. Datas e documentos ficam em `src/matricula.tsx` (também usado pelo post `post-matricula`); hoje com os dados do vestibular do 1º semestre de 2026.
+  - `matricula-video`: Reels vertical de matrícula. **Desativado** em `vite.config.ts`: a cena `src/scenes/video-matricula.tsx` e o áudio foram apagados em 24/11/2026 e nunca estiveram no git. O roteiro (`src/audio/roteiro-matricula.json`) e o layout (`src/matricula.tsx`, usado pelo post `post-matricula`) existem; datas ainda de jan/2026, atualizar para 2027 (calendário oficial: listas 18/01, 26/01 e 03/02/2027).
+- **Só `output/` pode ser apagada sem perda** (é regenerada pelo RENDER). `src/scenes`, `src/images`, `src/audio` e `kits/` são código e conteúdo.
 - `src/exame.tsx`: posts da prova (data/linha do tempo e checklist), com dados do FAQ e calendário oficiais; cenas `post-exame-data` e `post-exame-checklist` no projeto `post`.
 - `kits/*.json` + `tools/kit.py`: kit de publicação (arquivos numerados, `LEGENDAS.txt` e `agenda.ics` com lembretes) em `output/publicar/<nome>/`.
 - Áudio: `tools/narracao.py` (voz edge-tts), `tools/musica.py` (trilha original) e `tools/mixar.py` (mixagem com ducking), rodando pelo `.venv`.

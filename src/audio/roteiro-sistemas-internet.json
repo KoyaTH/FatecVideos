@@ -1,0 +1,13 @@
+{
+  "voice": "pt-BR-FranciscaNeural",
+  "rate": "+6%",
+  "gap": 0.35,
+  "segments": [
+    {"id": "intro", "text": "Quer criar o futuro da internet?"},
+    {"id": "curso", "text": "Na Fatec Taquaritinga, o curso superior tecnológico em Sistemas para Internet prepara você para o mercado digital."},
+    {"id": "areas", "text": "Você aprende desenvolvimento web, aplicativos mobile, design de interfaces, redes, marketing digital, banco de dados e programação full stack."},
+    {"id": "mercado", "text": "É um mercado em expansão: transforme ideias em aplicativos, sites e plataformas usadas por milhares de pessoas."},
+    {"id": "beneficios", "text": "O ensino superior é gratuito e presencial, com formação voltada ao mercado de tecnologia."},
+    {"id": "inscricoes", "text": "Fique de olho no próximo vestibular! Acompanhe as datas em: vestibular ponto fatec ponto ésse pê ponto gov ponto bê érre."}
+  ]
+}
