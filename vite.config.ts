@@ -11,6 +11,7 @@ export default defineConfig({
         './src/carrossel.ts',
         './src/post.ts',
         './src/post-video.ts',
+        './src/matricula-video.ts',
       ],
     }),
     ffmpeg(),

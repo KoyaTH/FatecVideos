@@ -1,12 +1,19 @@
 import {Circle, Gradient, Img, Line, Node, Rect, Txt} from '@motion-canvas/2d';
 import tecnicoEstoque from './images/unsplash-N_nAAwnBDy8-tecnico-estoque.jpg';
 import operadoraFabrica from './images/unsplash-5jugXEl5YHM-operadora-fabrica.jpg';
+import estudantesNotebook from './images/pixabay-students-1807505.jpg';
+import alunosSala from './images/unsplash-RHqKnRACsqs-alunos-sala.jpg';
 
 // ---------- Photos of people (see docs/BANCOS-DE-IMAGEM.md) ----------
 // Unsplash N_nAAwnBDy8 (Unsplash License): technician with blue helmet in a stockroom, 1600x900.
 export const FOTO_TECNICO = tecnicoEstoque;
 // Unsplash 5jugXEl5YHM (Unsplash License): operator at a machine on the factory floor, 1600x1067.
 export const FOTO_OPERADORA = operadoraFabrica;
+// Pixabay 1807505 (Pixabay Content License): three young people with laptops on a lawn, 1280x854.
+export const FOTO_ESTUDANTES = estudantesNotebook;
+// Unsplash RHqKnRACsqs (Unsplash License): a class writing on notepads; young woman with glasses
+// in focus at about (1080, 480) of 1600x1069.
+export const FOTO_TURMA = alunosSala;
 
 /** Where to place a photo: center (x, y) and width, in scene coordinates. */
 export interface PhotoSpec {
@@ -103,6 +110,31 @@ export const BENEFITS = [
 ];
 
 export const SITE = 'vestibular.fatec.sp.gov.br';
+
+/**
+ * Call to action used at the end of the course posts, carousel and videos.
+ * Check the official calendar (vestibular.fatec.sp.gov.br/calendario) before publishing:
+ * - while registration is open:  INSCRICOES_ABERTAS
+ * - otherwise (default):         PROXIMO_VESTIBULAR
+ * Registration for the 1st semester 2027 closed on 16/11/2026.
+ */
+export const PROXIMO_VESTIBULAR = {
+  /** Footer line in the single posts. */
+  titulo: 'PRÓXIMO VESTIBULAR',
+  /** Two big lines on the last carousel slide and the end of the vertical video. */
+  linhas: ['PRÓXIMO', 'VESTIBULAR'] as [string, string],
+  /** Line above the link. */
+  apoio: 'Acompanhe as datas em:',
+  /** Short tag for covers. */
+  selo: 'Ensino superior gratuito  •  Presencial',
+};
+export const INSCRICOES_ABERTAS = {
+  titulo: 'INSCRIÇÕES ABERTAS',
+  linhas: ['INSCRIÇÕES', 'ABERTAS'] as [string, string],
+  apoio: 'Inscreva-se no vestibular:',
+  selo: 'Inscrições abertas  •  Ensino superior gratuito',
+};
+export const CTA = PROXIMO_VESTIBULAR;
 
 /** Gradient backdrop with a tech grid and two soft glows. */
 export function background(width: number, height: number, grid?: (n: Node) => void) {

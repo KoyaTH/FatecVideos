@@ -25,6 +25,7 @@ export function makePosterRefs() {
 export type PosterRefs = ReturnType<typeof makePosterRefs>;
 import {
   background,
+  CTA,
   CYAN,
   FONT,
   FOTO_TECNICO,
@@ -391,8 +392,8 @@ export function poster(c: PosterContent, r: Partial<PosterRefs> = {}) {
 
       {/* Footer: enrollment */}
       <Node ref={r.enroll}>
-        <Txt x={-505} y={540} offset={[-1, 0]} text="INSCRIÇÕES ABERTAS" fontFamily={FONT} fontWeight={900} fontSize={44} fill={WHITE} />
-        <Txt x={-505} y={582} offset={[-1, 0]} text="Acesse:" fontFamily={FONT} fontWeight={600} fontSize={22} fill={MUTED} />
+        <Txt x={-505} y={540} offset={[-1, 0]} text={CTA.titulo} fontFamily={FONT} fontWeight={900} fontSize={44} fill={WHITE} />
+        <Txt x={-505} y={582} offset={[-1, 0]} text={CTA.apoio} fontFamily={FONT} fontWeight={600} fontSize={22} fill={MUTED} />
       </Node>
       <Rect ref={r.pill} x={-275} y={628} width={460} height={60} radius={14} fill={ORANGE}>
         <Txt text={SITE} fontFamily={FONT} fontWeight={800} fontSize={30} fill={WHITE} />

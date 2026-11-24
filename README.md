@@ -53,6 +53,7 @@ Fotos de bancos com licença de uso comercial gratuita, sem crédito obrigatóri
 - `pixabay-students-1807505.jpg`: [Pixabay #1807505](https://pixabay.com/pt/photos/alunos-computadores-laptops-1807505/) (Licença de Conteúdo do Pixabay)
 - `unsplash-N_nAAwnBDy8-tecnico-estoque.jpg`: [Unsplash N_nAAwnBDy8](https://unsplash.com/photos/N_nAAwnBDy8) (Licença Unsplash)
 - `unsplash-5jugXEl5YHM-operadora-fabrica.jpg`: [Unsplash 5jugXEl5YHM](https://unsplash.com/photos/5jugXEl5YHM) (Licença Unsplash)
+- `unsplash-RHqKnRACsqs-alunos-sala.jpg`: [Unsplash RHqKnRACsqs](https://unsplash.com/photos/RHqKnRACsqs) (Licença Unsplash)
 
 As pessoas das fotos são modelos de banco de imagem, não alunos da Fatec.
 

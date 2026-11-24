@@ -67,6 +67,7 @@ Buscar em inglês costuma trazer mais resultados.
 | `pixabay-students-1807505.jpg` | Pixabay | Post e vídeo de Sistemas para Internet |
 | `unsplash-N_nAAwnBDy8-tecnico-estoque.jpg` | Unsplash (gratuita) | Post de Gestão da Produção, capa do carrossel, abertura do vídeo de 20 s |
 | `unsplash-5jugXEl5YHM-operadora-fabrica.jpg` | Unsplash (gratuita) | Último slide do carrossel e fecho do vídeo de 20 s |
+| `unsplash-RHqKnRACsqs-alunos-sala.jpg` | Unsplash (gratuita) | Posts da prova (Dia da Prova e Checklist) |
 
 ## Como usar no projeto
 

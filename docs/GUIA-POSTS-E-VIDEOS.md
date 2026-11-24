@@ -28,7 +28,7 @@ Abra `http://localhost:9000/` e escolha o projeto:
 |---|---|---|---|
 | `src/project` | Vídeo vertical de 20 s (Reels/Stories) | 1080×1920 | MP4 |
 | `src/carrossel` | Carrossel de 5 slides | 1080×1350 | PNG (1 por slide) |
-| `src/post` | Posts únicos (um por curso) | 1080×1350 | PNG |
+| `src/post` | Post único (um por curso) | 1080×1350 | PNG |
 | `src/post-video` | Post animado com narração e música | 1080×1350 | MP4 com áudio |
 
 No editor, a prévia atualiza sozinha quando você salva um arquivo. Para exportar, clique em **RENDER** (painel *Video Settings*). Os arquivos vão para `output/`.
@@ -83,7 +83,7 @@ O áudio é montado em três passos, todos pelo `.venv`.
 
 Isso gera o `.wav` da voz e o `.tempos.json` com o início de cada trecho. A animação usa esses tempos para sincronizar sozinha. Precisa de internet, porque as vozes neurais vêm da Microsoft.
 
-**b) Música de fundo original**, sem direitos autorais de terceiros. Os argumentos são a duração em segundos e o BPM:
+**b) Música de fundo original**, sem direitos autorais de terceiros. Os argumentos são a duração em segundos e o BPM. A duração é o `total` do `.tempos.json` mais 1,25 s:
 
 ```powershell
 .\.venv\Scripts\python.exe tools\musica.py 43.7 src\audio\musica-tech.wav 112
@@ -101,11 +101,32 @@ Depois clique em **RENDER** em `src/post-video`.
 
 ## 6. Conferir antes de publicar
 
+- **Datas do vestibular:** confira o [calendário oficial](https://vestibular.fatec.sp.gov.br/calendario/). A chamada final dos posts e vídeos vem de `CTA` em `src/theme.tsx`:
+  - inscrições abertas → `export const CTA = INSCRICOES_ABERTAS;`
+  - fora do período (padrão) → `export const CTA = PROXIMO_VESTIBULAR;`
+
+  Depois de trocar, renderize tudo de novo. No vídeo narrado, ajuste também o último trecho do roteiro e refaça o áudio.
+- Datas da prova e da matrícula ficam em `src/exame.tsx` e `src/matricula.tsx`. Atualize a cada edição.
 - Abra o MP4 e **escute o áudio** (pronúncia, volume da música).
 - Confira a grafia de **Taquaritinga** e o link.
 - Veja se nenhuma foto tem marca ou logo de outra empresa em destaque.
 
-## 7. Usando com o Claude Code
+## 7. Kit de publicação (postar pelo celular)
+
+A conta é pessoal, então não dá para postar ou agendar por API. O fluxo é: o projeto monta um **kit** e você posta pelo app.
+
+1. Escreva o plano em `kits/<nome>.json`, com data, hora, tipo, arquivos e legenda de cada post. Use `kits/2026-12-prova.json` como modelo.
+2. Gere o kit:
+   ```powershell
+   .\.venv\Scripts\python.exe tools\kit.py kits\2026-12-prova.json
+   ```
+3. Em `output/publicar/<nome>/` ficam:
+   - os arquivos numerados na ordem de postagem (carrossel numa subpasta, `slide-1`…);
+   - `LEGENDAS.txt`, com a legenda de cada post pronta para copiar;
+   - `agenda.ics`, que você importa no Google Agenda ou no calendário do celular para ganhar **um lembrete 15 min antes** de cada post.
+4. Passe a pasta para o celular (Google Drive, OneDrive, WhatsApp para você mesmo…) e poste na hora do lembrete.
+
+## 8. Usando com o Claude Code
 
 O arquivo [`CLAUDE.md`](../CLAUDE.md) na raiz já explica o projeto para o Claude. Para o Claude saber Motion Canvas também em outros projetos, instale a skill:
 
