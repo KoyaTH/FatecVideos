@@ -20,6 +20,8 @@ projeto ──► kit (PNG/MP4 + legendas) ──► Google Drive ──► Metr
 
 > Use **a mesma conta Google** no conector do Google Drive e no Google Drive para computador. Se forem contas diferentes, o arquivo vai para um Drive e o Claude procura em outro.
 
+> **Por que o Google Drive para computador:** o conector do Google Drive serve para o Claude **achar** os arquivos e pegar o link, mas ele não consegue enviar imagens e vídeos grandes. O conector recebe o arquivo como texto dentro da própria chamada, e um PNG de 1 MB ou um MP4 não cabem ali. Com o Drive para computador, o script só copia os arquivos para a pasta `Meu Drive` e o Google sobe tudo sozinho, sem navegador.
+
 ## Configurar (uma vez)
 
 1. **Metricool:** crie a conta, crie uma marca e conecte o **Instagram** (e, se quiser, uma **Página do Facebook**).
