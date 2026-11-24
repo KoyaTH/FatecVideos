@@ -130,7 +130,7 @@ A conta é pessoal, então não dá para postar ou agendar por API. O fluxo é: 
 
 ### Agendar pelo Metricool (publica sozinho)
 
-O Claude agenda pelo conector do **Metricool**, com as mídias no **Google Drive**. Testado em 24/11/2026: o post foi publicado sozinho no horário marcado. O plano grátis permite **20 posts agendados por mês**, e cada pessoa conecta a própria conta.
+O Claude agenda pelo conector do **Metricool**, com as mídias na pasta **`ClaudeMetricool`** do seu Google Drive, compartilhada como "Qualquer pessoa com o link". Testado em 24/11/2026: o post foi publicado sozinho no horário marcado. O plano grátis permite **20 posts agendados por mês**, e cada pessoa conecta a própria conta.
 
 Configuração, passo a passo e solução de problemas: **[METRICOOL.md](METRICOOL.md)**.
 

@@ -4,11 +4,11 @@ Usage (from the project folder):
     .venv\\Scripts\\python.exe tools\\metricool.py kits\\<nome>.json [redes] [--pasta=DIR] [--github]
 
 Metricool takes media by link. Default mode is Google Drive (no GitHub needed):
-  1. copies every file of the kit to your Google Drive folder, in FatecVideos/<nome>/,
+  1. copies every file of the kit to your Google Drive folder, in ClaudeMetricool/<nome>/,
      with unique names (<nome>-01.png, <nome>-02-1.png, ...);
   2. writes kits/<nome>.metricool.json with, for each post: date/time (America/Sao_Paulo),
      networks, Instagram/Facebook type, caption and the file names on Drive.
-Then share Drive folder FatecVideos/<nome> as "Anyone with the link" (Metricool can
+Share the Drive folder ClaudeMetricool once as "Anyone with the link" (Metricool can
 only fetch Drive files shared that way), and Claude finds each file with the Google
 Drive connector, puts its Drive link in "media" and schedules with the Metricool
 connector -- always after reviewing image, caption, networks and time with the user.
@@ -36,6 +36,7 @@ import subprocess
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PASTA_DRIVE = "ClaudeMetricool"  # folder in "Meu Drive", shared once as "Anyone with the link"
 REDES_PADRAO = ["instagram"]  # add "facebook" when a Facebook Page is connected in Metricool
 
 TIPOS = {
@@ -92,7 +93,7 @@ def main() -> None:
     else:
         drive = pasta_drive(pasta_arg)
         if drive:
-            destino = os.path.join(drive, "FatecVideos", nome)
+            destino = os.path.join(drive, PASTA_DRIVE, nome)
             modo = "drive"
         else:
             destino = os.path.join(ROOT, "output", "publicar", nome, "drive")
@@ -148,13 +149,14 @@ def main() -> None:
     if modo == "drive":
         print(f"Mídias copiadas para o Google Drive: {destino}")
         print("1) Espere o Drive sincronizar.")
-        print(f"2) No Drive, compartilhe a pasta FatecVideos/{nome} como 'Qualquer pessoa com o link'.")
+        print(f"2) Confira que a pasta {PASTA_DRIVE} do Drive está compartilhada como 'Qualquer pessoa com o link' (só uma vez).")
         print("3) Peça ao Claude: agenda o kit no Metricool.")
     elif modo == "drive-manual":
         print(f"Google Drive para computador não encontrado. Mídias em: {destino}")
-        print("Envie essa pasta para o seu Google Drive (drive.google.com > Novo > Upload de pasta)")
+        print(f"Envie essa pasta para dentro de {PASTA_DRIVE} no seu Google Drive")
+        print(f"(drive.google.com > abra {PASTA_DRIVE} > Novo > Upload de pasta),")
         print("ou instale o Google Drive para computador e rode de novo.")
-        print("Depois compartilhe a pasta como 'Qualquer pessoa com o link' (o Metricool exige).")
+        print(f"A pasta {PASTA_DRIVE} precisa estar compartilhada como 'Qualquer pessoa com o link'.")
     else:
         git("add", os.path.relpath(destino, ROOT), os.path.relpath(saida, ROOT))
         if git("status", "--porcelain", "--", os.path.relpath(destino, ROOT), os.path.relpath(saida, ROOT)):

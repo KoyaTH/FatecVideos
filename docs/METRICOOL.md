@@ -1,10 +1,10 @@
 # Postar e agendar com Metricool + Google Drive
 
-Como publicar os posts e vídeos do projeto no Instagram (e no Facebook) pelo **Metricool**, com as mídias no **Google Drive**, sem precisar de GitHub. O projeto não traz nenhuma conta: **cada pessoa conecta a sua**.
+Como publicar os posts e vídeos do projeto no Instagram (e no Facebook) pelo **Metricool**, com as imagens e vídeos no **Google Drive**, sem GitHub e sem navegador. O projeto não traz nenhuma conta: **cada pessoa conecta a sua**.
 
 ```
-projeto ──► kit (PNG/MP4 + legendas) ──► Google Drive ──► Metricool ──► Instagram / Facebook
-                tools/kit.py           tools/metricool.py   (Claude)     publica no horário
+projeto ──► kit (PNG/MP4 + legendas) ──► Drive: ClaudeMetricool/<kit>/ ──► Metricool ──► Instagram / Facebook
+              tools/kit.py                 tools/metricool.py              (Claude)     publica no horário
 ```
 
 ## O que você precisa
@@ -16,57 +16,72 @@ projeto ──► kit (PNG/MP4 + legendas) ──► Google Drive ──► Metr
 | Página do Facebook conectada no Metricool *(opcional)* | postar no Facebook (perfil pessoal não funciona) | — |
 | Conta Google com Google Drive | guardar as mídias | grátis (15 GB) |
 | Conectores **Metricool** e **Google Drive** no Claude | o Claude agendar e achar os arquivos | — |
-| [Google Drive para computador](https://www.google.com/drive/download/) *(recomendado)* | o script já salva as mídias direto no Drive | grátis |
+| [Google Drive para computador](https://www.google.com/drive/download/) | o script copia as mídias para o Drive sem navegador | grátis |
 
-> Use **a mesma conta Google** no conector do Google Drive e no Google Drive para computador. Se forem contas diferentes, o arquivo vai para um Drive e o Claude procura em outro.
+> Use **a mesma conta Google** em tudo: no conector do Google Drive, no Google Drive para computador e, se o Metricool pedir, no Metricool. Com contas diferentes, o arquivo vai para um Drive e o Claude procura em outro.
 
-> **Por que o Google Drive para computador:** o conector do Google Drive serve para o Claude **achar** os arquivos e pegar o link, mas ele não consegue enviar imagens e vídeos grandes. O conector recebe o arquivo como texto dentro da própria chamada, e um PNG de 1 MB ou um MP4 não cabem ali. Com o Drive para computador, o script só copia os arquivos para a pasta `Meu Drive` e o Google sobe tudo sozinho, sem navegador.
+> **Por que o Google Drive para computador:** o conector do Google Drive serve para o Claude **achar** os arquivos e pegar o link, mas não consegue **enviar** imagens e vídeos grandes. O conector recebe o arquivo como texto dentro da própria chamada, e um PNG de 1 MB ou um MP4 não cabem ali. Com o Drive para computador, o script só copia os arquivos para a pasta do Drive no seu PC e o Google sobe tudo sozinho.
 
-## Configurar (uma vez)
+## Passo a passo: configurar (uma vez)
 
-1. **Metricool:** crie a conta, crie uma marca e conecte o **Instagram** (e, se quiser, uma **Página do Facebook**).
-2. **Claude:** em claude.ai → **Configurações → Conectores**, conecte **Metricool** e **Google Drive**. Depois abra uma **sessão nova** do Claude Code na pasta do projeto.
-3. **Computador:** instale o **Google Drive para computador** e entre com a mesma conta Google. Ele cria a pasta `Meu Drive` no seu PC.
-4. **Conferir:** peça ao Claude *"confere minha conta do Metricool"*. Ele mostra a marca e as redes conectadas.
+### 1. Metricool
+1. Crie uma conta grátis em [metricool.com](https://metricool.com).
+2. Crie uma **marca** (por exemplo "Fatec Taquaritinga").
+3. Em **Conexões** da marca, conecte o **Instagram**. Para postar no Facebook também, conecte uma **Página do Facebook**.
 
-## Publicar um kit
+### 2. Google Drive
+1. Entre no [drive.google.com](https://drive.google.com) com a conta Google que você vai usar.
+2. Em **Meu Drive**, crie uma pasta chamada **`ClaudeMetricool`**. O nome precisa ser exatamente esse, porque o script procura por ele.
+3. Clique com o botão direito em `ClaudeMetricool` → **Compartilhar → Acesso geral → Qualquer pessoa com o link → Leitor** → **Concluído**.
+   > O Metricool **só consegue baixar arquivos compartilhados como "Qualquer pessoa com o link"**. Testado: arquivo privado é recusado. Tudo o que entrar nessa pasta herda o compartilhamento. Os arquivos não aparecem em buscas, mas quem tiver o link consegue abrir. Não coloque nada pessoal nessa pasta.
+4. Instale o **[Google Drive para computador](https://www.google.com/drive/download/)** e entre com **a mesma conta**. Ele cria uma unidade no Windows (por exemplo `G:\Meu Drive`) com a pasta `ClaudeMetricool` sincronizada.
 
-1. **Gerar e montar o kit**, conforme o [guia](GUIA-POSTS-E-VIDEOS.md), seções 7 e 8:
+### 3. Claude
+1. Em claude.ai → **Configurações → Conectores**, conecte **Metricool** e **Google Drive**, com a mesma conta Google.
+2. Abra uma **sessão nova** do Claude Code na pasta do projeto.
+3. Peça: *"confere minha conta do Metricool"*. O Claude mostra a marca e as redes conectadas.
+
+## Passo a passo: publicar um kit
+
+1. **Gere e renderize** as peças (veja o [guia](GUIA-POSTS-E-VIDEOS.md), seções 7 e 8):
    ```powershell
    .\.venv\Scripts\python.exe tools\gerar.py pedidos\<nome>.json
    ```
-   Depois clique em **RENDER** no editor e rode:
+   Clique em **RENDER** no editor (`http://localhost:9000/src/gerador-posts` ou `gerador-reels`).
+2. **Monte o kit:**
    ```powershell
    .\.venv\Scripts\python.exe tools\kit.py kits\<nome>.json
    ```
-2. **Mandar as mídias para o Drive:**
+3. **Mande as mídias para o Drive:**
    ```powershell
    .\.venv\Scripts\python.exe tools\metricool.py kits\<nome>.json
    ```
-   - Os arquivos vão para `Meu Drive/FatecVideos/<nome>/`, com nomes únicos (`<nome>-01.png`…).
-   - O script também cria `kits/<nome>.metricool.json` com a data, a legenda, o tipo e a rede de cada post.
+   - Os arquivos vão para `Meu Drive/ClaudeMetricool/<nome>/`, com nomes únicos (`<nome>-01.png`, `<nome>-02.mp4`…).
+   - O script cria `kits/<nome>.metricool.json` com a data, a legenda, o tipo (feed, carrossel, Reels ou Stories) e a rede de cada post.
    - Opções:
      - `instagram,facebook` depois do nome do kit, para postar nas duas redes;
-     - `--pasta="G:\Meu Drive"` quando o Drive estiver em outro lugar.
-   - Sem o Google Drive para computador, os arquivos ficam em `output/publicar/<nome>/drive/`. Suba essa pasta pelo drive.google.com (**Novo → Upload de pasta**).
-3. **Compartilhar por link:** no Drive, clique com o botão direito na pasta `FatecVideos/<nome>` e escolha **Compartilhar → Acesso geral → Qualquer pessoa com o link (Leitor)**. Os arquivos de dentro herdam o acesso.
-   > O Metricool **só consegue baixar arquivos compartilhados como "Qualquer pessoa com o link"**. O arquivo não aparece em buscas, mas quem tiver o link consegue abrir. Depois de publicar, você pode voltar o acesso para "Restrito" ou apagar a pasta, porque o Metricool guarda a própria cópia.
-4. **Agendar:** peça ao Claude *"agenda o kit `<nome>` no Metricool"*.
+     - `--pasta="G:\Meu Drive"` se o Drive não for encontrado sozinho.
+   - Sem o Google Drive para computador, os arquivos ficam em `output/publicar/<nome>/drive/`. Suba essa pasta para dentro de `ClaudeMetricool` pelo drive.google.com (**Novo → Upload de pasta**).
+4. **Espere o Drive sincronizar.** O ícone do Google Drive na barra do Windows mostra quando terminou.
+5. **Peça ao Claude:** *"agenda o kit `<nome>` no Metricool"*.
    - Ele acha cada arquivo no seu Drive.
    - Mostra **imagem, legenda, rede e horário de cada post** e **só agenda depois do seu OK**.
    - Passado o horário, confere se publicou.
 
+Depois de publicado, o Metricool guarda a própria cópia. Você pode apagar a subpasta do kit no Drive.
+
 ## Testar sem publicar
 
-Peça: *"manda o post X para o Metricool como rascunho"*. O post fica salvo no **Planejamento** do Metricool como rascunho, sem data de publicação ativa. Assim dá para conferir imagem e legenda lá antes de agendar de verdade.
+Peça: *"manda o post X para o Metricool como rascunho"*. O post fica salvo no **Planejamento** do Metricool como rascunho, sem publicar. Dá para conferir a imagem e a legenda lá antes de agendar de verdade, e depois apagar o rascunho.
 
 ## Problemas comuns
 
-| Mensagem | Causa e solução |
+| Mensagem ou sintoma | Causa e solução |
 |---|---|
-| `Metricool can't access the Google Drive file … 'Anyone with the link'` | O arquivo ou a pasta não está compartilhado por link. Faça o passo 3 |
+| `Metricool can't access the Google Drive file … 'Anyone with the link'` | A pasta `ClaudeMetricool` não está compartilhada por link. Veja a configuração, passo 2.3 |
 | `This brand doesn't have any social network connected yet` | Conecte o Instagram (ou a Página) no Metricool |
-| O Claude não acha o arquivo no Drive | O conector do Google Drive está em outra conta Google, ou o Drive ainda não sincronizou. Espere um pouco e confira a conta |
+| O Claude não acha o arquivo no Drive | O conector do Google Drive está em outra conta Google, ou o Drive ainda não sincronizou |
+| O script diz "Google Drive para computador não encontrado" | Instale o Drive para computador ou rode com `--pasta="G:\Meu Drive"` |
 | `The date can't be in the past` | O horário já passou. Escolha outro |
 | Post agendado, mas não publicou | Veja o status no Planejamento do Metricool. A conta do Instagram pode precisar ser reconectada |
 
