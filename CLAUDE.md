@@ -13,6 +13,11 @@ Posts, carrosséis, vídeos e animações em Motion Canvas para a Fatec Taquarit
 - **Antes de montar posts ou kits, conferir o calendário oficial** (vestibular.fatec.sp.gov.br/calendario). Não publicar "Inscrições abertas" fora do período: a chamada final vem de `CTA` em `src/theme.tsx` (`PROXIMO_VESTIBULAR` ou `INSCRICOES_ABERTAS`).
 ## Postagem e agendamento (Metricool)
 
+Conta do Metricool (deixe vazio no repositório; cada pessoa usa a sua, e o Claude descobre os valores com `getBrandSettings`):
+- ID da marca (`blogId`):
+- Redes conectadas:
+
+- **Depois de entregar qualquer post ou vídeo, perguntar se a pessoa quer postar/agendar pelo Metricool** (e para quando). Se o conector não estiver conectado, explicar como conectar (guia, seção 7) e oferecer o kit para postar pelo app.
 - **Agendar pelo conector do Metricool.** Cada pessoa que clonar o projeto conecta **a própria conta** (passo a passo no guia, seção 7). Nunca gravar no repositório IDs de marca, nomes de usuário, e-mails ou links de posts: no começo de cada agendamento, chamar `getBrandSettings` para descobrir o `blogId`, o fuso e as redes conectadas. Se nenhuma rede estiver conectada, mandar a pessoa conectar no Metricool e parar.
 - Funciona com Instagram que o Metricool aceite publicar (testado em 24/11/2026: publicou sozinho no horário). Facebook só como **Página**. Incluir só as redes que `getBrandSettings` mostrar.
 - Plano grátis: **20 posts agendados por mês**. Avisar quando o mês estiver perto do limite (`getScheduledPosts`).
