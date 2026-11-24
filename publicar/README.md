@@ -1,5 +1,5 @@
 # publicar/
 
-Mídias dos kits enviadas para agendar no Metricool. O `tools/metricool.py` copia os arquivos para `publicar/<nome-do-kit>/`, e o Metricool baixa cada um pelo link público do GitHub (`raw.githubusercontent.com/<seu-usuario>/<seu-repo>/main/publicar/...`).
+Usada só no modo `--github` do `tools/metricool.py`: as mídias do kit são copiadas para `publicar/<nome-do-kit>/` e o Metricool baixa cada uma pelo link público `raw.githubusercontent.com/<seu-usuario>/<seu-repo>/main/publicar/...`.
 
-Depois que um post for publicado, o Metricool guarda a cópia dele, então os arquivos daqui podem ser apagados.
+O modo padrão é o **Google Drive** (sem GitHub): veja a seção 7 de [docs/GUIA-POSTS-E-VIDEOS.md](../docs/GUIA-POSTS-E-VIDEOS.md).
